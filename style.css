@@ -5,19 +5,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     background-color: #f0f0f0;
-    flex-direction: column;
     overflow: hidden;
     position: relative;
 }
 
 /* Header Styling */
 h1 {
-    font-size: 2.5rem;
+    font-size: 1.25rem; /* 폰트 크기를 줄였습니다 */
     color: #333;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* Mood Buttons Styling */
@@ -25,21 +25,41 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    position: fixed; /* Fixed로 위치 지정 */
+    bottom: 20px; /* 하단에 위치시키기 */
+    width: 100%;
+    padding: 0 20px; /* 양옆 마진 추가 */
+    z-index: 10;
 }
 
+/* Heart-shaped Button Styling */
 .mood-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #3498db;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #FF6347; /* 빨간색 */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.mood-btn:before {
+    content: "❤️"; /* 하트 아이콘 */
+    font-size: 1.8rem;
 }
 
 .mood-btn:hover {
-    background-color: #2980b9;
+    transform: scale(1.2); /* Hover 시 버튼이 커지는 효과 */
 }
 
 /* Interactive Area (Where the lines will move) */
@@ -74,5 +94,5 @@ h1 {
     top: 50%;
     height: 5px;
     background-color: #000;
-    animation: lineMovement 3s linear infinite;
+    animation: lineMovement 3s linear forwards;
 }
