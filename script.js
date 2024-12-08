@@ -45,7 +45,5 @@ function addColor(mood) {
     interactiveArea.appendChild(line);
 
     // Start the animation to move the line across the screen
-    setTimeout(() => {
-        line.style.animation = 'lineMovement 3s linear infinite'; // Trigger the animation after the line is added
-    }, 10);
+    line.style.animation = 'lineMovement 3s linear forwards'; // Trigger the animation immediately
 }
