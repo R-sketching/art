@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Art</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Interactive Art Inspired by Mondrian and Cruz-Diez</h1>
+    <div id="art-container">
+        <div class="grid-item" id="item1"></div>
+        <div class="grid-item" id="item2"></div>
+        <div class="grid-item" id="item3"></div>
+        <div class="grid-item" id="item4"></div>
+    </div>
+    <input type="text" id="mood-input" placeholder="Enter your mood..." onkeyup="changeColor()">
+    <button onclick="submitMoods()">Submit Moods</button>
+    <script src="script.js"></script>
+</body>
+</html>
