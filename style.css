@@ -16,7 +16,7 @@ body {
 /* Header Styling */
 h1 {
     font-size: 1.25rem; /* Reduced font size */
-    color: #333;
+    color: #320;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -31,7 +31,6 @@ h1 {
     bottom: 20px;
     width: 100%;
     padding: 0 20px;
-    z-index: 10;
 }
 
 /* Mood Button Styling */
@@ -101,7 +100,8 @@ h1 {
     position: absolute;
     height: 5px;
     background-color: #000;
-    animation: lineMovement 2s linear forwards; /* Default animation for horizontal line */
+    z-index: 2;
+    animation: lineMovement 3s linear forwards; /* Default animation for horizontal line */
 }
 
 /* Background Animation */
