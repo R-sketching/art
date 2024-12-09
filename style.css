@@ -1,65 +1,61 @@
+/* Body Styling */
 body {
-    font-family: 'Tahoma', sans-serif
+    font-family: 'Arial', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background: linear-gradient(45deg, #FF6347, #FFEB3B);
+    background: linear-gradient(45deg, #FF6347, #FFEB3B, #00A79D, #F9ED32, #2DE23E);  /* Multiple colors for gradient */
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite; /* Background illumination effect */
     overflow: hidden;
     position: relative;
 }
 
-/* Header Styling */
-h1 {
-    font-size: 1.25rem; /* Reduced font size */
-    color: #320;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 /* Mood Buttons Styling */
 #mood-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid; /* Use grid to arrange buttons */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Automatically adjust buttons in a row */
     gap: 10px;
-    position: fixed; /* Fixed position at the bottom */
+    justify-content: center;
+    padding: 0 20px;
+    position: fixed;
     bottom: 20px;
     width: 100%;
-    padding: 0 20px;
 }
 
 /* Mood Button Styling */
 .mood-btn {
     padding: 8px 15px;
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 0.9rem;
     background-color: #FF6347; /* Red color */
     color: white;
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
 }
 
 .mood-btn:hover {
     background-color: #FF4500; /* Hover effect with darker red */
 }
 
+/* Interactive Area for lines to appear */
 #interactive-area {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: transparent; /* Transparent background */
+    background-color: transparent; /* Transparent background for lines */
     overflow: hidden;
-    z-index: 1; /* Make sure it stays on top of the background */
+    z-index: 1; /* Ensure it stays on top of the background */
 }
 
-/* Line animations for movement across the entire screen */
+/* Line animations for horizontal movement */
 @keyframes lineMovement {
     0% {
         left: -100%;
@@ -78,6 +74,7 @@ h1 {
     }
 }
 
+/* Line animations for vertical movement */
 @keyframes verticalLineMovement {
     0% {
         left: 0;
@@ -100,7 +97,7 @@ h1 {
     position: absolute;
     height: 5px;
     background-color: #000;
-    z-index: 2;
+    z-index: 2; /* Ensure the line appears above background */
     animation: lineMovement 3s linear forwards; /* Default animation for horizontal line */
 }
 
