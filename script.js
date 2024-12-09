@@ -1,10 +1,11 @@
+// Color mapping for each emotion
 const moodColors = {
     calm: '#9F9F00',        // Calm
     grounded: '#2B4A00',    // Grounded
     anger: '#ED1C24',       // Anger
     sadness: '#BE1E2D',     // Sadness
-    excitement: '#FF8500',  // Excitement
-    peace: '#00A79D',       // Peace
+    excited: '#FF8500',     // Excitement
+    peaceful: '#00A79D',    // Peaceful
     confidence: '#343A82',  // Confidence
     happiness: '#2DE23E',   // Happiness
     love: '#FF4580',        // Love
@@ -44,11 +45,11 @@ function addColor(mood) {
     interactiveArea.appendChild(line);
 
     // Set random position for the line (random top and left values)
-    const randomTop = Math.random() * 100;  // Random top position between 0% and 100%
-    const randomLeft = Math.random() * 100; // Random left position between 0% and 100%
+    const randomTop = Math.random() * 100;   // Random vertical position (0 to 100%)
+    const randomLeft = Math.random() * 100;  // Random horizontal position (0 to 100%)
 
-    line.style.top = `${randomTop}%`; // Randomly place the line vertically
-    line.style.left = `${randomLeft}%`; // Randomly place the line horizontally
+    line.style.top = `${randomTop}%`;   // Random top position
+    line.style.left = `${randomLeft}%`; // Random left position
 
     // Randomly choose horizontal or vertical direction for the line
     const randomDirection = Math.random() > 0.5 ? 'horizontal' : 'vertical';
