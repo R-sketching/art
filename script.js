@@ -43,9 +43,12 @@ function addColor(mood) {
     // Add line to the body
     interactiveArea.appendChild(line);
 
-    // Make sure the line is positioned correctly
-    line.style.left = '0'; // Start from the left side of the screen
-    line.style.top = '50%'; // Vertically center the line initially
+    // Set random position for the line (random top and left values)
+    const randomTop = Math.random() * 100;  // Random top position between 0% and 100%
+    const randomLeft = Math.random() * 100; // Random left position between 0% and 100%
+
+    line.style.top = `${randomTop}%`; // Randomly place the line vertically
+    line.style.left = `${randomLeft}%`; // Randomly place the line horizontally
 
     // Randomly choose horizontal or vertical direction for the line
     const randomDirection = Math.random() > 0.5 ? 'horizontal' : 'vertical';
