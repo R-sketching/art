@@ -1,4 +1,3 @@
-// Color mapping for each emotion (based on your provided color palette)
 const moodColors = {
     calm: '#9F9F00',        // Calm
     grounded: '#2B4A00',    // Grounded
