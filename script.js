@@ -44,6 +44,11 @@ function addColor(mood) {
     // Add line to the interactive area
     interactiveArea.appendChild(line);
 
-    // Start the animation to move the line across the screen
-    line.style.animation = 'lineMovement 3s linear forwards'; // Trigger the animation immediately
+    // Randomly choose horizontal or vertical direction for the line
+    const randomDirection = Math.random() > 0.5 ? 'horizontal' : 'vertical';
+    line.style.animation = randomDirection === 'horizontal' ? 'lineMovement 3s linear forwards' : 'verticalLineMovement 3s linear forwards';
+    
+    // Darken background slightly as lines are added
+    const background = document.querySelector('body');
+    background.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // Slight darkening effect
 }
