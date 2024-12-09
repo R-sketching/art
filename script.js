@@ -35,17 +35,17 @@ function addColor(mood) {
     colors.push(color); // Add color to the colors array
 
     // Create a line element for the color and animate it
-    const interactiveArea = document.getElementById('interactive-area');
+    const interactiveArea = document.body;  // Now using the entire body for the lines
     const line = document.createElement('div');
     line.classList.add('line');
     line.style.backgroundColor = color; // Set the line color based on the selected mood
 
-    // Add line to the interactive area
+    // Add line to the body
     interactiveArea.appendChild(line);
 
-    // Make sure the line is positioned inside the container correctly
-    line.style.left = '0'; // Ensure the line starts from the left
-    line.style.top = '50%'; // Position the line vertically centered initially
+    // Make sure the line is positioned correctly
+    line.style.left = '0'; // Start from the left side of the screen
+    line.style.top = '50%'; // Vertically center the line initially
 
     // Randomly choose horizontal or vertical direction for the line
     const randomDirection = Math.random() > 0.5 ? 'horizontal' : 'vertical';
