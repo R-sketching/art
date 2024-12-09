@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Tahoma', sans-serif
     margin: 0;
     display: flex;
     justify-content: center;
@@ -43,11 +43,21 @@ h1 {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .mood-btn:hover {
     background-color: #FF4500; /* Hover effect with darker red */
+}
+
+#interactive-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent; /* Transparent background */
+    overflow: hidden;
+    z-index: 1; /* Make sure it stays on top of the background */
 }
 
 /* Line animations for movement across the entire screen */
@@ -91,7 +101,7 @@ h1 {
     position: absolute;
     height: 5px;
     background-color: #000;
-    animation: lineMovement 3s linear forwards; /* Default animation for horizontal line */
+    animation: lineMovement 2s linear forwards; /* Default animation for horizontal line */
 }
 
 /* Background Animation */
