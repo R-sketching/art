@@ -43,10 +43,18 @@ function addColor(mood) {
     // Add line to the interactive area
     interactiveArea.appendChild(line);
 
+    // Make sure the line is positioned inside the container correctly
+    line.style.left = '0'; // Ensure the line starts from the left
+    line.style.top = '50%'; // Position the line vertically centered initially
+
     // Randomly choose horizontal or vertical direction for the line
     const randomDirection = Math.random() > 0.5 ? 'horizontal' : 'vertical';
-    line.style.animation = randomDirection === 'horizontal' ? 'lineMovement 3s linear forwards' : 'verticalLineMovement 3s linear forwards';
-    
+    if (randomDirection === 'horizontal') {
+        line.style.animation = 'lineMovement 3s linear forwards'; // Horizontal movement
+    } else {
+        line.style.animation = 'verticalLineMovement 3s linear forwards'; // Vertical movement
+    }
+
     // Darken background slightly as lines are added
     const background = document.querySelector('body');
     background.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // Slight darkening effect
